@@ -9,6 +9,6 @@ Problem Statement – Today, Customer Service is very important in businesses. I
 
 Project Description – SWIFT will use NER model to extract relevant entities from the emails and then those extracted entities contains details like location and product and then it can be forwarded to the appropriate department which can handle the issue. 
 
-Technology Stack  - React, Node JS, Stanford NER tagger.
+Technology Stack  - Node JS, Express JS, Slack API, Stanford NER tagger.
 
 
