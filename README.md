@@ -1,14 +1,15 @@
- Project Ideas 
+# SWIFT
+SWIFT provides faster, inexpensive support for employees. The application uses NER (Named-Entity Recognition) to extract relevant details from employee messages and forwards them to the appropriate department or party which can handle the issue.
 
-1)	    SWIFT - APPROVED (read below)
+# Abstract
+Employee productivity and satisfaction are absolutely essential to businesses. If employees are unable to quickly get support on problems they have, frustrations rise, output drops, and a business's sales will suffer in the long run. In a large company with many employees spread across departments with different responsibilities, it takes time to forward an issue to someone who can address it. A support team may handle an employee support channel in an online workspace, such as Slack. The team must read through all employee messages, decide who to send each message to, and coordinate further actions between the people involved. Much cost and effort is spent to do this.
 
-I would like you guys to tweak this a bit. Make it for supporting employees within an enterprise. develop a slack plug-in application which looks at individual messages in a slack support channel and routes the problem to the right people. NER tagger is a good idea. The app should also have a dashboard that can pull stats to help guide the support team planning and taking pro-active actions. Goal is to provide faster and inexpensive support. 
+SWIFT is a Slack plug-in application which will automate the process of sending employee messages to the right people. It looks at individual messages in a Slack support channel and routes the problem to the right people. The app also has a dashboard that can pull stats to help guide the support team's planning and taking proactive actions.
 
+# Architecture Diagram
+![Architecture](https://github.com/SJSUFall2019-CMPE272/swift/blob/master/CE%20272%20Swift%20Diagram.jpg)
 
-Problem Statement – Today, Customer Service is very important in businesses. If the customer complaints are not handled quickly, it leads to dissatisfaction which can promote decrease in sales in long run. So successful businesses do require the complaints to be addressed quickly. And when there are lot of emails to be addressed, it takes some time to forward the complaints to the respective department and solve the issue. In that scenario, SWIFT can help the businesses by forwarding the emails to the concerned department without any need of employees. This will reduce the time to solve the issue.
-
-Project Description – SWIFT will use NER model to extract relevant entities from the emails and then those extracted entities contains details like location and product and then it can be forwarded to the appropriate department which can handle the issue. 
-
-Technology Stack  - React, Node JS, Stanford NER tagger.
+# Technology Stack
+Node JS, Express JS, Slack API, Stanford NER tagger.
 
 
