@@ -1,0 +1,39 @@
+(Michael 10-11-19)
+How to setup and run:
+
+1. The app is based off this tutorial: https://x-team.com/blog/slack-app-step-by-step/ *
+
+2. Install Node.js, the Yarn package manager, Express.js, and ngrok.
+
+3. Git clone. Login to Slack and navigate to "My Apps".
+
+4. Create a .env file. This will hold the verification token under Basic Info->App Credentials
+and the access token under Install App. Also add the workspace channel IDs.
+You can get the IDs with the tester page on: https://api.slack.com/methods/channels.history
+
+slack_app_token=...
+verification_token=...
+support_channel=...
+general_channel=...
+
+Git will ignore the .env file when you push later.
+
+5. From the git repo:
+yarn run dev
+And on a separate terminal:
+ngrok http 3000
+Copy the https address and paste onto the Event Subscriptions section's Request URL:
+[url]/api/events
+Save changes.
+
+6. Go to Swift workspace. Now when you post a new message in the support channel, the 
+message is read and reposted in the general channel.
+
+
+
+* These commands were run, in case you still have do this on your own computer:
+
+yarn add express body-parser
+yarn add --dev babel-cli babel-core babel-preset-es2015 babel-preset-stage-0 eslint nodemon rimraf
+
+yarn add --dev dotenv
