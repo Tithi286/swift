@@ -3,6 +3,8 @@ import { readChannelHistory, forward } from '../services/slack'
 
 const router = new express.Router()
 
+// the forward command sends the most recent support message to general
+// as a test
 router.post('/commands', async (req, res) => {
 
     // which message text to forward, 0 is most recently posted
