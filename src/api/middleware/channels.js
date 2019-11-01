@@ -1,5 +1,8 @@
 import { listChannels } from '../services/slack'
 
+/* only allow messages detected from support channel
+or url verification to be forwarded */
+
 let support_channel = ''
 let general_channel = ''
 export default async (req, res, next) => {
@@ -35,6 +38,7 @@ export default async (req, res, next) => {
 
     // console.log('support channel id:', support_channel)
     if (req.body.type === "url_verification" || req.body.event.channel === support_channel) {
+        // console.log('channel is verified')
         next()
     }
     //next()

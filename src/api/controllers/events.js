@@ -7,6 +7,9 @@ import { support_channel, general_channel } from '../middleware/channels'
 
 const router = new express.Router()
 
+// import index from ner-server
+var ner = require('../../ner-server/index');
+
 // only forward messages posted on the support channel
 router.post('/events', filterChannels, async (req, res) => {
     // console.log('event detected')
@@ -23,7 +26,20 @@ router.post('/events', filterChannels, async (req, res) => {
         .then(response => {
             let channelHistory = response
             let forwardedMessage = channelHistory.messages[msgIndex].text
-            forward(general_channel, forwardedMessage)
+
+            console.log('starting ner tagging')
+            // get tags using ner
+            ner.post(
+                3000, 9191, forwardedMessage, 
+                function(err, res){
+                    // console.log("res is:", res)
+                    console.log('post tags: '+JSON.stringify(res.tags)+'\n')
+
+                    console.log('finished tagging message')
+                    forward(general_channel, forwardedMessage)
+                }
+            );
+            
         })
         .catch(() => {
             status = 503
